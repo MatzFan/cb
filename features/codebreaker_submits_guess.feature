@@ -9,12 +9,10 @@ Feature: code-breaker submits guess
   the mark includes one - sign.
 #END:feature
 
-#START:outline
   Scenario Outline: submit guess
     Given the secret code is "<code>"
     When I guess "<guess>"
     Then the mark should be "<mark>"
-#END:outline
 
     Scenarios: no matches
       | code | guess | mark |
