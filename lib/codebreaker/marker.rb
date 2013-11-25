@@ -1,24 +1,4 @@
-module Codebreaker
-
-  class Game
-
-    def initialize(output)
-      @output = output
-    end
-
-    def start(secret)
-      @secret = secret
-      @output.puts 'Welcome to Codebreaker!'
-      @output.puts 'Enter a guess:'
-    end
-
-    def guess(guess)
-      marker = Marker.new(@secret, guess)
-      @output.puts '+'* marker.exact_match_count +
-                   '-'* marker.number_match_count
-    end
-
-    class Marker
+class Marker
 
       def initialize(secret, guess)
         @secret, @guess = secret, guess
@@ -47,7 +27,3 @@ module Codebreaker
       end
 
     end # of Marker
-
-  end # of Game
-
-end # of module
